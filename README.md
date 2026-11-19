@@ -77,7 +77,7 @@ Si más adelante querés recibir los pedidos por correo o en una planilla, hay q
 
 ## Licencia
 
-Pendiente de definir.
+Pendiente.
 
 ## Contacto
 
