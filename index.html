@@ -147,7 +147,7 @@ section { padding: 96px 0; position: relative; }
 
 /* Trabajos */
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.work { position: relative; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg2); transition: transform .5s var(--ease), border-color .3s; }
+.work { display: block; text-decoration: none; color: inherit; position: relative; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg2); transition: transform .5s var(--ease), border-color .3s; }
 .work:hover { transform: translateY(-8px); border-color: #4A3E70; }
 .thumb { height: 220px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 18px; background-size: 220% 220%; animation: drift 14s ease-in-out infinite alternate; }
 @keyframes drift { to { background-position: 100% 100%; } }
@@ -156,7 +156,10 @@ section { padding: 96px 0; position: relative; }
 .work:nth-child(3) .thumb { background-image: linear-gradient(135deg, #FF5C47, #7B1E6B 55%, #2A1B6B); }
 .thumb::after { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%; right: -40px; top: -50px; background: rgba(255,255,255,.18); transition: transform .8s var(--ease); }
 .work:hover .thumb::after { transform: scale(1.9); }
-.tags { position: relative; display: flex; gap: 8px; flex-wrap: wrap; z-index: 1; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; z-index: 1; transition: transform .8s var(--ease); }
+.work:hover .thumb img { transform: scale(1.05); }
+.visit { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--coral); }
+.tags { position: relative; display: flex; gap: 8px; flex-wrap: wrap; z-index: 2; }
 .tags span { background: rgba(12,9,20,.7); backdrop-filter: blur(6px); font-size: 12.5px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
 .work .body { padding: 22px 22px 26px; }
 .work h3 { font-size: 22px; margin-bottom: 8px; display: flex; justify-content: space-between; gap: 10px; }
@@ -344,12 +347,12 @@ footer { padding: 40px 0 28px; border-top: 1px solid var(--line); overflow: hidd
       <div class="sec-head rv">
         <p class="eyebrow">Trabajos</p>
         <h2>Algo de lo que ya <em>hicimos</em></h2>
-        <p>Pedinos los links para verlos funcionando.</p>
+        <p>Tocá una tarjeta para ver el sitio funcionando.</p>
       </div>
       <div class="grid3">
-        <article class="work rv"><div class="thumb"><div class="tags"><span>Invitación web</span><span>Evento</span></div></div><div class="body"><h3>Invitación de cumpleaños con tema <span class="arr">↗</span></h3><p>Cuenta regresiva, mapa y confirmación de asistencia, publicada en un dominio propio.</p></div></article>
-        <article class="work rv"><div class="thumb"><div class="tags"><span>Sitio web</span><span>Servicios</span></div></div><div class="body"><h3>Web para estudio de Pilates <span class="arr">↗</span></h3><p>Clases, horarios y contacto directo por WhatsApp pensado para el celular.</p></div></article>
-        <article class="work rv"><div class="thumb"><div class="tags"><span>Tienda online</span><span>Catálogo</span></div></div><div class="body"><h3>Tienda de tarjetas y suscripciones <span class="arr">↗</span></h3><p>Catálogo digital con pedido por WhatsApp y panel para actualizar productos.</p></div></article>
+        <a class="work rv" href="https://invitacion-tadeo30.tadeoparty30.workers.dev/" target="_blank" rel="noopener"><div class="thumb"><img src="img/invitacion.jpg" alt="Vista previa de la invitación de cumpleaños" loading="lazy" onerror="this.remove()"><div class="tags"><span>Invitación web</span><span>Evento</span></div></div><div class="body"><h3>Invitación de cumpleaños con tema <span class="arr">↗</span></h3><p>Cuenta regresiva, mapa y confirmación de asistencia, publicada en un dominio propio.</p><span class="visit">Ver sitio funcionando</span></div></a>
+        <a class="work rv" href="https://powerhousepilates.fit/" target="_blank" rel="noopener"><div class="thumb"><img src="img/pilates.jpg" alt="Vista previa de la web de Power House Pilates" loading="lazy" onerror="this.remove()"><div class="tags"><span>Sitio web</span><span>Servicios</span></div></div><div class="body"><h3>Power House Pilates <span class="arr">↗</span></h3><p>Clases, horarios y contacto directo por WhatsApp pensado para el celular.</p><span class="visit">Ver sitio funcionando</span></div></a>
+        <a class="work rv" href="#pedido"><div class="thumb"><div class="tags"><span>Tu proyecto</span><span>Próximo</span></div></div><div class="body"><h3>El próximo puede ser el tuyo <span class="arr">→</span></h3><p>Contanos qué necesitás y te respondemos con una propuesta en menos de 24 horas.</p><span class="visit">Pedir presupuesto</span></div></a>
       </div>
     </div>
   </section>
